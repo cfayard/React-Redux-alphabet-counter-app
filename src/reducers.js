@@ -19,16 +19,16 @@ export function count(state=alphabet[index], action) {
     // console.log("somebody called count()")
     let newState = state;
     // console.log(state)
-    // if (index > 25) {index = 0}
-    // else if (index < 0) {index = 25}
+    if (index > 25) {index = 0}
+    else if (index < 0) {index = 25}
     switch (action.type) {
         case INCREMENT:
-            // increment!
-            newState = alphabet[index + 1];
+            // console.log('increment is called')
+            newState = alphabet[index += 1];
             break;
         case DECREMENT:
             // decrement
-            newState = alphabet[index - 1];
+            newState = alphabet[index -= 1];
             break;
         case RESET:
             // reset to 0
